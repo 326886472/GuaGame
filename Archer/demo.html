@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #id-canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <canvas width="400" height="600" id="id-canvas"></canvas>
+    <hr>
+    <span>'WSAD'移动，'J'发射子弹, 'O'卍解</span>
+    <hr>
+    <span>这个滚动条可以控制游戏速度</span><input name="name" value="1" type="range" id="id-speed">
+    <!-- gua game 相关文件 -->
+    <script src="guagame/utils.js"></script>
+    <script src="guagame/gua_game.js"></script>
+    <script src="guagame/gua_scene.js"></script>
+    <!-- 主场景文件 -->
+    <script src="scene/main/paddle.js"></script>
+    <script src="scene/main/player.js"></script>
+    <script src="scene/main/npc.js"></script>
+    <script src="scene/main/bullet.js"></script>
+    <script src="scene/main/ruan.js"></script>
+    <script src="scene/main/scene.js"></script>
+    <!-- 结束和标题场景文件 -->
+    <script src="scene/end/scene_end.js"></script>
+    <script src="scene/end/scene_tas.js"></script>
+    <script src="scene/title/scene_title.js"></script>
+    <!-- 关卡数据 -->
+    <script src="level.js"></script>
+    <!-- 入口文件 -->
+    <script src="main.js"></script>
+    <style>
+        * {
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+        #label {
+            display: flex;
+            flex-direction: row;
+            width:300px;
+            justify-content: center;
+        }
+        #label span {
+            text-align: center;
+            display: inline-block;
+            line-height: 33px;
+            padding-right: 35px;
+        }
+        .switch-btn {
+            cursor: pointer;
+            width: 45px;
+            height: 28px;
+            position: relative;
+            border: 1px solid #dfdfdf;
+            background-color: #fdfdfd;
+            box-shadow: #dfdfdf 0 0 0 0 inset;
+            border-radius: 15px;
+            background-clip: content-box;
+            display: inline-block;
+            -webkit-appearance: none;
+            user-select: none;
+            outline: none;
+        }
+        .switch-btn:before {
+            content: '';
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 20px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+        }
+        .switch-btn:checked {
+            border-color: #56b0d4;
+            box-shadow: #56b0d4 0 0 0 16px inset;
+            background-color: #56b0d4;
+        }
+        .switch-btn:checked:before {
+            left: 18px;
+        }
+        .switch-btn.switch-btn-animbg {
+            transition: background-color ease .4s;
+        }
+        .switch-btn.switch-btn-animbg:before {
+            transition: left .3s;
+        }
+        .switch-btn.switch-btn-animbg:checked {
+            box-shadow: #dfdfdf 0 0 0 0 inset;
+            background-color: #56b0d4;
+            transition: border-color .4s, background-color ease .4s;
+        }
+        .switch-btn.switch-btn-animbg:checked:before {
+            transition: left .3s;
+        }
+    </style>
+</body>
+</html>
